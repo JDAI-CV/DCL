@@ -59,6 +59,7 @@ def train(cfg,
             if isinstance(outputs, list):
                 loss = criterion(outputs[0], labels)
                 loss += criterion(outputs[1], labels_swap)
+                loss += add_loss(outputs[2], swap_law)
             loss.backward()
             optimizer.step()
 
