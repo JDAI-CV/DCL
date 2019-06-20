@@ -2,57 +2,105 @@
 
 By Yue Chen, Yalong Bai, Wei Zhang, Tao Mei
 
-### Introduction
+## Introduction
 
-This code is relative to the [DCL](https://arxiv.org/), which is accepted on CVPR 2019.
+This project is a DCL pytorch implementation of [*Destruction and Construction Learning for Fine-grained Image Recognition*](http://openaccess.thecvf.com/content_CVPR_2019/html/Chen_Destruction_and_Construction_Learning_for_Fine-Grained_Image_Recognition_CVPR_2019_paper.html) accepted by CVPR2019. 
 
-This DCL code in this repo is written based on Pytorch 0.4.0.
 
-This code has been tested on Ubuntu 16.04.3 LTS with Python 3.6.5 and CUDA 9.0.
+## Requirements
 
-Yuo can use this public docker image as the test environment:
+1. Python 3.6
+
+2. Pytorch 0.4.0 or 0.4.1
+
+3. CUDA 8.0 or higher
+
+For docker environment:
 
 ```shell
-docker pull pytorch/pytorch:0.4-cuda9-cudnn7-devel
+docker: pull pytorch/pytorch:0.4-cuda9-cudnn7-devel
 ```
 
-### Citing DCL
+For conda environment:
 
-If you find this repo useful in your research, please consider citing:
+```shell
+conda create --name DCL file conda_list.txt
+```
 
-    @article{chen2019dcl,
-      title={Destruction and Construction Learning for Fine-grained Image Recognition},
-      author={Chen Yue and Bai, Yalong and Zhang Wei and Mei Tao},
-      journal={arXiv preprint arXiv:},
-      year={2019}
-    }
+## Datasets Prepare
 
-### Requirements
+1. Download correspond dataset to folder 'datasets'
 
-0. Pytorch 0.4.0
+2. Data organization: eg. CUB
 
-0. Numpy, Pillow, Pandas
+     All the image data are in './datasets/CUB/data/'
+    e.g. './datasets/CUB/data/*.jpg'
 
-0. GPU: P40, etc. (May have bugs on the latest V100 GPU)
+    The annotation files are in './datasets/CUB/anno/'
+    e.g. './dataset/CUB/data/train.txt'
 
-### Datasets Prepare
+    In annotations:
 
-0. Download CUB-200-2011 dataset form [Caltech-UCSD Birds-200-2011](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html)
+    ```shell
+    name_of_image.jpg label_num\n
+    ```
 
-0. Unzip the dataset file under the folder 'datasets'
+    e.g. for CUB in repository:
 
-0. Run ./datasets/CUB_pre.py to generate annotation files 'train.txt', 'test.txt' and image folder 'all' for CUB-200-2011 dataset
+    ```shell
+    Black_Footed_Albatross_0009_34.jpg 0
+    Black_Footed_Albatross_0014_89.jpg 0
+    Laysan_Albatross_0044_784.jpg 1
+    Sooty_Albatross_0021_796339.jpg 2
+    ...
+    ```
 
-### Testing Demo
+Some examples of datasets like CUB, Stanford Car, etc. are already given in our repository. You can use DCL to your datasets by simply converting annotations to train.txt/val.txt/test.txt and modify the class number in `config.py` as in line67: numcls=200.
 
-0. Download `CUB_model.pth` from [Google Drive](https://drive.google.com/file/d/1xWMOi5hADm1xMUl5dDLeP6cfjZit6nQi/view?usp=sharing).
+## Training
 
-0. Run `CUB_test.py`
+Run `train.py` to train DCL.
 
-### Training on CUB-200-2011
+For training CUB / STCAR / AIR from scratch
 
-0. Run `train.py` to train and test the CUB-200-2011 datasets. Wait about half day for training and testing.
+```shell
+python train.py --data CUB --epoch 360 --backbone resnet50 \
+                    --tb 16 --tnw 16 --vb 512 --vnw 16 \
+                    --lr 0.008 --lr_step 60 \
+                    --cls_lr_ratio 10 --start_epoch 0 \
+                    --detail training_descibe --size 512 \
+                    --crop 448 --cls_mul --swap_num 7 7
+```
 
-0. Hopefully it would give the evaluation results around ~87.8% acc after running.
+For training CUB / STCAR / AIR from trained checkpoint
 
-**Support for other datasets will be updated later**
+```shell
+python train.py --data CUB --epoch 360 --backbone resnet50 \
+                    --tb 16 --tnw 16 --vb 512 --vnw 16 \
+                    --lr 0.008 --lr_step 60 \
+                    --cls_lr_ratio 10 --start_epoch $LAST_EPOCH \
+                    --detail training_descibe4checkpoint --size 512 \
+                    --crop 448 --cls_mul --swap_num 7 7
+```
+
+For training FGVC product datasets from scratch
+
+```shell
+ python train.py --data product --epoch 60 --backbone senet154 \
+                    --tb 96 --tnw 32 --vb 512 --vnw 32 \
+                    --lr 0.01 --lr_step 12 \
+                    --cls_lr_ratio 10 --start_epoch 0 \
+                    --detail training_descibe --size 512 \
+                    --crop 448 --cls_2 --swap_num 7 7
+```
+
+For training FGVC datasets from trained checkpoint
+
+```shell
+ python train.py --data product --epoch 60 --backbone senet154 \
+                    --tb 96 --tnw 32 --vb 512 --vnw 32 \
+                    --lr 0.01 --lr_step 12 \
+                    --cls_lr_ratio 10 --start_epoch $LAST_EPOCH \
+                    --detail training_descibe4checkpoint --size 512 \
+                    --crop 448 --cls_2 --swap_num 7 7
+```
