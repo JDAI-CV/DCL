@@ -1,13 +1,23 @@
+
 # Destruction and Construction Learning for Fine-grained Image Recognition
 
 By Yue Chen, Yalong Bai, Wei Zhang, Tao Mei
 
 Speical thanks to [Yuanzhi Liang](https://github.com/akira-l) for code refactoring.
 
+## UPDATE Jun. 21
+
+Our solution for the FGVC Challenge 2019 (The Sixth Workshop on Fine-Grained Visual Categorization in CVPR 2019) is updated!
+
+With ensemble of several DCL based classification models, we won:
+
+- **First Place** in [iMaterialist Challenge on Product Recognition](https://www.kaggle.com/c/imaterialist-product-2019/leaderboard)
+- **First Place** in [Fieldguide Challenge: Moths & Butterflies](https://www.kaggle.com/c/fieldguide-challenge-moths-and-butterflies/leaderboard)
+- **Second Place** in [iFood - 2019 at FGVC6](https://www.kaggle.com/c/ifood-2019-fgvc6/leaderboard)
+
 ## Introduction
 
 This project is a DCL pytorch implementation of [*Destruction and Construction Learning for Fine-grained Image Recognition*](http://openaccess.thecvf.com/content_CVPR_2019/html/Chen_Destruction_and_Construction_Learning_for_Fine-Grained_Image_Recognition_CVPR_2019_paper.html), CVPR2019. 
-
 
 ## Requirements
 
