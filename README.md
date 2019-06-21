@@ -1,6 +1,7 @@
 # Destruction and Construction Learning for Fine-grained Image Recognition
 
 By Yue Chen, Yalong Bai, Wei Zhang, Tao Mei
+
 Speical thanks to [Yuanzhi Liang](https://github.com/akira-l) for code refactoring.
 
 ## Introduction
