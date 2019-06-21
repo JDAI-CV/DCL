@@ -6,7 +6,7 @@ Speical thanks to [Yuanzhi Liang](https://github.com/akira-l) for code refactori
 
 ## Introduction
 
-This project is a DCL pytorch implementation of [*Destruction and Construction Learning for Fine-grained Image Recognition*](http://openaccess.thecvf.com/content_CVPR_2019/html/Chen_Destruction_and_Construction_Learning_for_Fine-Grained_Image_Recognition_CVPR_2019_paper.html) accepted by CVPR2019. 
+This project is a DCL pytorch implementation of [*Destruction and Construction Learning for Fine-grained Image Recognition*](http://openaccess.thecvf.com/content_CVPR_2019/html/Chen_Destruction_and_Construction_Learning_for_Fine-Grained_Image_Recognition_CVPR_2019_paper.html), CVPR2019. 
 
 
 ## Requirements
@@ -106,3 +106,17 @@ For training FGVC datasets from trained checkpoint
                     --detail training_descibe4checkpoint --size 512 \
                     --crop 448 --cls_2 --swap_num 7 7
 ```
+
+## Citation
+Please cite our CVPR19 paper if you use DCL in your work:
+```
+@InProceedings{Chen_2019_CVPR,
+author = {Chen, Yue and Bai, Yalong and Zhang, Wei and Mei, Tao},
+title = {Destruction and Construction Learning for Fine-Grained Image Recognition},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2019}
+}
+```
+
+
