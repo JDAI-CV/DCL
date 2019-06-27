@@ -39,6 +39,13 @@ For conda environment:
 conda create --name DCL file conda_list.txt
 ```
 
+For more backbone supports in DCL, please check [pretrainmodels](https://github.com/Cadene/pretrained-models.pytorch) and install:
+
+```shell
+pip install pretrainedmodels
+```
+
+
 ## Datasets Prepare
 
 1. Download correspond dataset to folder 'datasets'
