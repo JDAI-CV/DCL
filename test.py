@@ -82,7 +82,6 @@ if __name__ == '__main__':
 
     setattr(dataloader, 'total_item_len', len(data_set))
 
-    save_result = Submit_result(args.dataset)
     cudnn.benchmark = True
 
     model = MainModel(Config)
