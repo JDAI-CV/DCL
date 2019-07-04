@@ -123,6 +123,7 @@ For training FGVC datasets from trained checkpoint
                     --detail training_descibe4checkpoint --size 512 \
                     --crop 448 --cls_2 --swap_num 7 7
 ```
+To achieve the similar results of paper, please use the default parameter settings.
 
 ## Citation
 Please cite our CVPR19 paper if you use DCL in your work:
