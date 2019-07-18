@@ -85,7 +85,7 @@ For training CUB / STCAR / AIR from scratch
 ```shell
 python train.py --data CUB --epoch 360 --backbone resnet50 \
                     --tb 16 --tnw 16 --vb 512 --vnw 16 \
-                    --lr 0.008 --lr_step 60 \
+                    --lr 0.0008 --lr_step 60 \
                     --cls_lr_ratio 10 --start_epoch 0 \
                     --detail training_descibe --size 512 \
                     --crop 448 --cls_mul --swap_num 7 7
@@ -96,7 +96,7 @@ For training CUB / STCAR / AIR from trained checkpoint
 ```shell
 python train.py --data CUB --epoch 360 --backbone resnet50 \
                     --tb 16 --tnw 16 --vb 512 --vnw 16 \
-                    --lr 0.008 --lr_step 60 \
+                    --lr 0.0008 --lr_step 60 \
                     --cls_lr_ratio 10 --start_epoch $LAST_EPOCH \
                     --detail training_descibe4checkpoint --size 512 \
                     --crop 448 --cls_mul --swap_num 7 7
