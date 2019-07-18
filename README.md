@@ -30,7 +30,7 @@ This project is a DCL pytorch implementation of [*Destruction and Construction L
 For docker environment:
 
 ```shell
-docker: pull pytorch/pytorch:0.4-cuda9-cudnn7-devel
+docker pull pytorch/pytorch:0.4-cuda9-cudnn7-devel
 ```
 
 For conda environment:
