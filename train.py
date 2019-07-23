@@ -125,7 +125,7 @@ if __name__ == '__main__':
                                                 shuffle=True,\
                                                 num_workers=args.train_num_workers,\
                                                 collate_fn=collate_fn4train if not Config.use_backbone else collate_fn4backbone,
-                                                drop_last=False,
+                                                drop_last=True if Config.use_backbone else False,
                                                 pin_memory=True)
 
     setattr(dataloader['train'], 'total_item_len', len(train_set))
@@ -135,7 +135,7 @@ if __name__ == '__main__':
                                                 shuffle=False,\
                                                 num_workers=args.val_num_workers,\
                                                 collate_fn=collate_fn4val if not Config.use_backbone else collate_fn4backbone,
-                                                drop_last=False,
+                                                drop_last=True if Config.use_backbone else False,
                                                 pin_memory=True)
 
     setattr(dataloader['trainval'], 'total_item_len', len(trainval_set))
@@ -146,7 +146,7 @@ if __name__ == '__main__':
                                                 shuffle=False,\
                                                 num_workers=args.val_num_workers,\
                                                 collate_fn=collate_fn4test if not Config.use_backbone else collate_fn4backbone,
-                                                drop_last=False,
+                                                drop_last=True if Config.use_backbone else False,
                                                 pin_memory=True)
 
     setattr(dataloader['val'], 'total_item_len', len(val_set))
