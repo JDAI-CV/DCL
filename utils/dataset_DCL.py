@@ -162,10 +162,10 @@ def collate_fn4backbone(batch):
     img_name = []
     for sample in batch:
         imgs.append(sample[0])
-        if len(sample) == 5:
-            label.append(sample[1])
-        else:
+        if len(sample) == 7:
             label.append(sample[2])
+        else:
+            label.append(sample[1])
         img_name.append(sample[-1])
     return torch.stack(imgs, 0), label, img_name
 
