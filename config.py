@@ -109,6 +109,8 @@ class LoadConfig(object):
         self.swap_num = args.swap_num
 
         self.save_dir = './net_model'
+        if not os.path.exists(self.save_dir):
+            os.mkdir(self.save_dir)
         self.backbone = args.backbone
 
         self.use_dcl = True
