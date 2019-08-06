@@ -67,7 +67,7 @@ class LoadConfig(object):
             self.rawdata_root = './../FGVC_product/data'
             self.anno_root = './../FGVC_product/anno'
             self.numcls = 2019
-        if args.dataset == 'CUB':
+        elif args.dataset == 'CUB':
             self.dataset = args.dataset
             self.rawdata_root = './dataset/CUB_200_2011/data'
             self.anno_root = './dataset/CUB_200_2011/anno'
