@@ -1,9 +1,9 @@
-
 # Destruction and Construction Learning for Fine-grained Image Recognition
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/destruction-and-construction-learning-for/fine-grained-image-classification-on-fgvc)](https://paperswithcode.com/sota/fine-grained-image-classification-on-fgvc?p=destruction-and-construction-learning-for)
 
 By Yue Chen, Yalong Bai, Wei Zhang, Tao Mei
 
-Speical thanks to [Yuanzhi Liang](https://github.com/akira-l) for code refactoring.
+Special thanks to [Yuanzhi Liang](https://github.com/akira-l) for code refactoring.
 
 ## UPDATE Jun. 21
 
