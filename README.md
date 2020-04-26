@@ -1,4 +1,3 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/destruction-and-construction-learning-for/fine-grained-image-classification-on-fgvc)](https://paperswithcode.com/sota/fine-grained-image-classification-on-fgvc?p=destruction-and-construction-learning-for)
 # Destruction and Construction Learning for Fine-grained Image Recognition
 
 By Yue Chen, Yalong Bai, Wei Zhang, Tao Mei
