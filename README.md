@@ -4,7 +4,7 @@ By Yue Chen, Yalong Bai, Wei Zhang, Tao Mei
 
 Special thanks to [Yuanzhi Liang](https://github.com/akira-l) for code refactoring.
 
-## UPDATA Jun. 10, 2020
+## UPDATE Jun. 10, 2020
 ```diff
 ! Research Intern Position Opening. Please send your cv to baiyalong[AT]jd.com if you are interested.
 ```
