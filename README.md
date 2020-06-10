@@ -4,7 +4,13 @@ By Yue Chen, Yalong Bai, Wei Zhang, Tao Mei
 
 Special thanks to [Yuanzhi Liang](https://github.com/akira-l) for code refactoring.
 
-## UPDATE Jun. 21
+## UPDATA Jun. 10, 2020
+```diff
+! Research Intern Position Opening. Please send your cv to baiyalong[AT]jd.com if you are interested.
+```
+- **First Place** in [CVPR 2020 AliProducts Challenge: Large-scale Product Recognition](https://tianchi.aliyun.com/competition/entrance/231780/rankingList)
+
+## UPDATE Jun. 21, 2019
 
 Our solution for the FGVC Challenge 2019 (The Sixth Workshop on Fine-Grained Visual Categorization in CVPR 2019) is updated!
 
@@ -125,7 +131,7 @@ For training FGVC datasets from trained checkpoint
 To achieve the similar results of paper, please use the default parameter settings.
 
 ## Citation
-Please cite our CVPR19 paper if you use DCL in your work:
+Please cite our CVPR19 paper if you use this codebase in your work:
 ```
 @InProceedings{Chen_2019_CVPR,
 author = {Chen, Yue and Bai, Yalong and Zhang, Wei and Mei, Tao},
@@ -135,5 +141,5 @@ month = {June},
 year = {2019}
 }
 ```
-
-
+### Find our more recent work: 
+Look-into-Object: Self-supervised Structure Modeling for Object Recognition. CVPR2020 [[pdf](https://arxiv.org/abs/2003.14142), [Source Code](https://github.com/JDAI-CV/LIO)]
